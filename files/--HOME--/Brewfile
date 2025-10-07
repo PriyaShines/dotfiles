@@ -64,39 +64,20 @@ brew 'btop'
 brew 'git-gui'
 brew 'jq'
 brew 'moreutils'
-brew 'ncdu'
-brew 'pandoc'
-brew 'prettyping'
-brew 'ripgrep'
-brew 'syncthing'
-brew 'tlrc'
 
-cask 'aldente', postinstall: "\"${HOME}/.dotfiles/scripts/setup-login-item.sh\" 'AlDente'"
-cask 'boring-notch', postinstall: "\"${HOME}/.dotfiles/scripts/setup-login-item.sh\" 'boringNotch'" if ::OS::Mac::version >= 14
-cask 'brave-browser'
+# cask 'aldente', postinstall: "\"${HOME}/.dotfiles/scripts/setup-login-item.sh\" 'AlDente'"
+# cask 'boring-notch', postinstall: "\"${HOME}/.dotfiles/scripts/setup-login-item.sh\" 'boringNotch'" if ::OS::Mac::version >= 14
 cask 'clocker', postinstall: "\"${HOME}/.dotfiles/scripts/setup-login-item.sh\" 'Clocker'"
-cask 'firefox@nightly' #, greedy: true
-cask 'fliqlo'
-cask 'google-chrome@beta'
-cask 'grayjay'
+cask 'google-chrome'
 cask 'jordanbaird-ice@beta', postinstall: "\"${HOME}/.dotfiles/scripts/setup-login-item.sh\" 'Ice'" if ::OS::Mac::version >= 14
-cask 'keepassxc@beta'
-cask 'keycastr'
-cask 'keyclu' if is_arm
-cask 'ollama-app', restart_service: :changed
-cask 'onlyoffice'
-cask 'onyx' # if !is_beta_os && ::OS::Mac::version < 26
+# cask 'keycastr'
+# cask 'keyclu' if is_arm
 cask 'pearcleaner'
-cask 'protonvpn'
-cask 'rancher'
+# cask 'rancher'
 cask 'raycast', postinstall: "\"${HOME}/.dotfiles/scripts/setup-login-item.sh\" 'Raycast'"
 cask 'stats', postinstall: "\"${HOME}/.dotfiles/scripts/setup-login-item.sh\" 'Stats'"
-cask 'vscodium@insiders'   # TODO: Doesn't handle 'Remote Containers' and GH-based auto-syncing when compared to VSCode
-cask 'zen@twilight'
+cask 'visual-studio-code'
 cask 'zoom'
-
-brew 'mas'
-mas 'PDFgear', id: 6469021132
 
 # VSCode extensions
 # Note: I don't want brew to silently install VS Code (which is what it does currently if the following lines are present but it doesn't find the executable 'code'!)
@@ -136,6 +117,7 @@ if is_vscode_installed
   vscode 'orta.vscode-jest'
   vscode 'redhat.vscode-yaml'
   vscode 'richie5um2.vscode-sort-json'
+  vscode 'ritwickdey.liveserver'
   vscode 'shan.code-settings-sync'
   vscode 'shopify.ruby-lsp'
   vscode 'tchayen.markdown-links'
